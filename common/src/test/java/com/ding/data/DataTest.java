@@ -1,6 +1,7 @@
 package com.ding.data;
 
 import com.ding.dao.UserDao;
+import com.ding.mogondb.MongoDbService;
 import com.sweetw.idata.commons.annotations.AppUsingIdAndPwdAndIp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +14,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:*Context.xml")
-public class DataTest {
+public class  DataTest {
 
     @Autowired
     UserDao userDao;
+
+    @Autowired
+    MongoDbService mongoDbService;
 
     @Test
     public void testUser(){
@@ -32,6 +36,11 @@ public class DataTest {
 
         User user = userDao.selectByPrimaryKey(1);
         System.out.println(user.getUserName());
+    }
+
+    @Test
+    public void testMongo() throws Exception{
+        mongoDbService.createCollection("zhihu","test1");
     }
 
 }
