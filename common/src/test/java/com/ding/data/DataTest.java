@@ -30,22 +30,6 @@ public class  DataTest {
     @Autowired
     InitToken initToken;
 
-//    @Test
-//    public void testUser(){
-//        for(int i = 0;i < 100; i++){
-//            User user = new User();
-//            user.setUserName("gurong经"+1+2*i);
-//            userDao.insert(user);
-//        }
-//    }
-//
-//    @Test
-//    public void testUserquery(){
-//
-//        User user = userDao.selectByPrimaryKey(1);
-//        System.out.println(user.getUserName());
-//    }
-
     @Test
     public void testMongo() throws Exception{
         mongoDbService.createCollection("zhihu","test1");

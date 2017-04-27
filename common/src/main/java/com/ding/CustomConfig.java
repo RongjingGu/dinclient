@@ -30,34 +30,4 @@ public class CustomConfig {
 	 public String getAgentId(){
 		 return this.agentId;
 	 }
-	 
-//	 @Value("${shortmessage.account}")
-//	 public String shortMessageAccount;
-//	 public String getShortmessageAccount(){
-//		 return shortMessageAccount;
-//	 }
-//
-//	 @Value("${shortmessage.key}")
-//	 public String shortMessageKey;
-//	 public String getShortmessageKey(){
-//		 return shortMessageKey;
-//	 }
-//
-//	 @Value("${shortmessage.channel}")
-//	 public String shortMessageChannel;
-//	 public String getShortmessageChannel(){
-//		 return shortMessageChannel;
-//	 }
-//
-//	 @Value("${shortmessage.url}")
-//	 public String shortMessageUrl;
-//	 public String getShortmessageUrl(){
-//		 return shortMessageUrl;
-//	 }
-//
-//	 @Value("${shortmessage.signature}")
-//	 public String shortMessageSignature;
-//	 public String getShortmessageSignature(){
-//		 return shortMessageSignature;
-//	 }
 }
