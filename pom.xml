@@ -284,7 +284,6 @@
     </build>
 
     <modules>
-        <module>desplay</module>
         <module>common</module>
         <module>portal</module>
     </modules>
