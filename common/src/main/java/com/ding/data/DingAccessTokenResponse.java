@@ -2,6 +2,7 @@ package com.ding.data;
 
 /**
  * Created by Gurongjing on 2017/4/27.
+ *
  */
 public class DingAccessTokenResponse extends DingResponseCode {
     private String access_token;

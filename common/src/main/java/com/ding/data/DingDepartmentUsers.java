@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by Gurongjing on 2017/4/27.
+ *
  */
 public class DingDepartmentUsers extends DingResponseCode{
 

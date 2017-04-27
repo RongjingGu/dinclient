@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * Created by Gurongjing on 2017/4/27.
+ *
  */
 public class DingUser extends DingResponseCode {
     /* {
