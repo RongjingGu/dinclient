@@ -21,17 +21,4 @@ import java.util.Map;
 @Service
 public class MainService {
 
-    @Autowired
-    InitToken initToken;
-
-    @RequestMapping(value = "/getInitToken", method = {
-            RequestMethod.GET,RequestMethod.POST},headers="Accept=application/json")
-    @ResponseBody
-    public Map getInitToken(){
-        Map map = new HashMap();
-        initToken.getAccessToken();
-        map.put("access_token", DGlobal.accessToken);
-        map.put("ticket", DGlobal.jsTicket);
-        return map;
-    }
 }
