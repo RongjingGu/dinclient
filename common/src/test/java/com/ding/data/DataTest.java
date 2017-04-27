@@ -1,6 +1,7 @@
 package com.ding.data;
 
 import com.ding.CustomConfig;
+import com.ding.DGlobal;
 import com.ding.dao.UserDao;
 import com.ding.main.InitToken;
 import com.ding.mogondb.MongoDbService;
@@ -42,7 +43,12 @@ public class  DataTest {
 
     @Test
     public void testInitToken(){
-        initToken.getAccessToken();
+        initToken.initTokenTask();
+    }
+
+    @Test
+    public void testToken(){
+        System.out.println(DGlobal.jsTicket);
     }
 
 }
