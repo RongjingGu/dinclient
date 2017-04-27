@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * 类说明:修改医生解绑、带关键字查询病例、短信验证码
+ * 类说明:得到配置文件中的内容
  */
 @Component
 public class CustomConfig {
