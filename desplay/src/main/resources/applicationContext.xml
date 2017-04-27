@@ -103,6 +103,7 @@
 			<list>
 				<value>classpath:jdbc.properties</value> 
 				<value>classpath:email.properties</value>
+				<value>classpath:config.properties</value>
 			</list>
 		</property>
 	</bean> 

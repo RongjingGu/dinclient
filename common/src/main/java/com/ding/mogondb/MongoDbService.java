@@ -36,7 +36,7 @@ public class MongoDbService {
     @javax.annotation.PostConstruct
     public void init() {
         try {
-            mongo = new MongoClient("192.168.10.5",
+            mongo = new MongoClient("127.0.0.1",
                     27017);
             String username = "";
             String password = "";
