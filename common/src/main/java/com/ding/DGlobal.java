@@ -24,6 +24,14 @@ public class DGlobal {
     /*https://oapi.dingtalk.com/user/getUseridByUnionid?access_token=ACCESS_TOKEN&unionid=xxxxxx*/
     public static final String GET_USERID_UNIONID_URL = "https://oapi.dingtalk.com/user/get";
 
+    /*https://oapi.dingtalk.com/user/simplelist?access_token=ACCESS_TOKEN&department_id=1*/
+    public static final String GET_DEPARTMENT_USERS = "https://oapi.dingtalk.com/user/simplelist";
 
+    /*https://oapi.dingtalk.com/user/get?access_token=ACCESS_TOKEN&userid=zhangsan*/
+
+    public static final String GET_USER_BYUSERID = "https://oapi.dingtalk.com/user/get";
+
+    /*https://oapi.dingtalk.com/user/list?access_token=ACCESS_TOKEN&department_id=1*/
+    public static final String GET_DEPARTMENT_USERS_DETAIL = "https://oapi.dingtalk.com/user/list";
 
 }

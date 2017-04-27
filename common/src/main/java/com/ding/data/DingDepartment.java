@@ -1,36 +1,34 @@
 package com.ding.data;
 
-import com.fasterxml.jackson.databind.node.BooleanNode;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 /**
  * Created by Gurongjing on 2017/4/27.
  */
-public class DingDepartment extends DingResponseCode{
-    /*{
-        "errcode": 0,
-            "errmsg": "ok",
-            "id": 2,
-            "name": "钉钉事业部",
-            "order" : 10,
-            "parentid": 1,
-            "createDeptGroup": true,
-            "autoAddUser": true,
-            "deptHiding" : true,
-            "deptPerimits" : "3|4",
-            "userPerimits" : "userid1|userid2",
-            "outerDept" : true,
-            "outerPermitDepts" : "1|2",
-            "outerPermitUsers" : "userid3|userid4",
-            "orgDeptOwner" : "manager1122",
-            "deptManagerUseridList" : "manager1122|manager3211"
-    }*/
+public class DingDepartment extends DingResponseCode {
+    /*{"deptHiding":false,
+       "parentid":1,
+       "outerPermitDepts":"",
+       "groupContainSubDept":false,
+       "deptManagerUseridList":"",
+       "errcode":0,
+       "id":35503146,
+       "outerPermitUsers":"",
+       "createDeptGroup":true,
+       "order":1,
+       "outerDept":false,
+       "name":"dep1",
+       "orgDeptOwner":"",
+       "autoAddUser":true,
+       "deptPerimits":"",
+       "errmsg":"ok",
+       "userPerimits":""}
+       */
 
     private Integer id;
     private String name;
     private Integer order;
     private Integer parentid;
     private Boolean createDeptGroup;
+    private Boolean groupContainSubDept;
     private Boolean autoAddUser;
     private Boolean deptHiding;
     private String deptPerimits;
@@ -151,5 +149,13 @@ public class DingDepartment extends DingResponseCode{
 
     public void setDeptManagerUseridList(String deptManagerUseridList) {
         this.deptManagerUseridList = deptManagerUseridList;
+    }
+
+    public Boolean getGroupContainSubDept() {
+        return groupContainSubDept;
+    }
+
+    public void setGroupContainSubDept(Boolean groupContainSubDept) {
+        this.groupContainSubDept = groupContainSubDept;
     }
 }

@@ -11,7 +11,6 @@ import com.sweetw.idata.commons.utils.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import sun.net.www.protocol.gopher.GopherClient;
 
 import java.util.TimerTask;
 import java.util.logging.Logger;
@@ -50,7 +49,7 @@ public class InitToken {
 
         try {
             _logger.info("url:"+ DGlobal.ACCESS_TOKEN_URL+"request"+postData);
-            RemoteService.getResponse(DGlobal.ACCESS_TOKEN_URL, "", postData,"GET", "application/X-WWW-form-urlencoded", out);
+            RemoteService.getResponse(DGlobal.ACCESS_TOKEN_URL, "", postData, "GET", "application/X-WWW-form-urlencoded", out);
             _logger.info("getResponse"+out);
             DingAccessTokenResponse response = Utility.JsonDeserialize(DingAccessTokenResponse.class,out);
             DGlobal.accessToken = response.getAccess_token();

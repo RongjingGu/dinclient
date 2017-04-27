@@ -1,15 +1,75 @@
 package com.ding.service;
 
+import com.alibaba.fastjson.JSON;
+import com.ding.DGlobal;
+import com.ding.data.DingDepartment;
+import com.ding.data.DingDepartmentList;
+import com.ding.data.DingDepartmentUsers;
+import com.ding.data.DingUser;
+import com.sweetw.idata.commons.utils.RemoteService;
+import com.sweetw.idata.commons.utils.Utility;
 import org.springframework.stereotype.Service;
 
+import java.util.logging.Logger;
+
 /**
- *  Created by Gurongjing on 2017/4/27.
+ * Created by Gurongjing on 2017/4/27.
  */
 
 @Service
-public class UserService{
+public class UserService {
+
+    private final static Logger _logger = Logger.getLogger(UserService.class.getName());
+
+    public DingDepartmentList getDepartmentList(Integer parentId) throws Exception {
+
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&id=" + parentId;
+        _logger.info("url:" + DGlobal.GET_DEPARTMENT_URL + postString);
+        RemoteService.getResponse(DGlobal.GET_DEPARTMENT_URL, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        DingDepartmentList response = Utility.JsonDeserialize(DingDepartmentList.class, out);
+        _logger.info("getResponse=" + out);
+        return response;
+    }
 
 
+    public DingDepartment getDepartmentDetail(Integer depId) throws Exception {
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&id=" + depId;
+        _logger.info("url:" + DGlobal.GET_DEPARTMENT_DETAIL_URL + postString);
+        RemoteService.getResponse(DGlobal.GET_DEPARTMENT_DETAIL_URL, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        DingDepartment response = Utility.JsonDeserialize(DingDepartment.class, out);
+        _logger.info("getResponse=" + out);
+        return response;
+    }
+
+    public DingDepartmentUsers getDingDepartmentUser(Integer depId) throws Exception {
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&department_id=" + depId;
+        _logger.info("url:" + DGlobal.GET_DEPARTMENT_USERS + postString);
+        RemoteService.getResponse(DGlobal.GET_DEPARTMENT_USERS, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        DingDepartmentUsers response = Utility.JsonDeserialize(DingDepartmentUsers.class, out);
+        _logger.info("getResponse=" + out);
+        return response;
+    }
+
+    public String getUserId(String unionId) throws Exception {
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&unionid=" + unionId;
+        _logger.info("url:" + DGlobal.GET_USERID_UNIONID_URL + postString);
+        RemoteService.getResponse(DGlobal.GET_USERID_UNIONID_URL, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        _logger.info("getResponse=" + out);
+        return out.toString();
+    }
 
 
+    public DingUser getUserDetailByUserId(String userid) throws Exception {
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&userid=" + userid;
+        _logger.info("url:" + DGlobal.GET_USER_BYUSERID + postString);
+        RemoteService.getResponse(DGlobal.GET_USER_BYUSERID, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        _logger.info("getResponse=" + out);
+        DingUser response = JSON.parseObject(out.toString(),DingUser.class);
+        return response;
+    }
 }

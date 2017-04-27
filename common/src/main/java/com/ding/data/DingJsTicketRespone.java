@@ -3,7 +3,7 @@ package com.ding.data;
 /**
  * Created by Gurongjing on 2017/4/27.
  */
-public class DingJsTicketRespone extends DingResponseCode{
+public class DingJsTicketRespone extends DingResponseCode {
 
     private String ticket;
     private String expires_in;
