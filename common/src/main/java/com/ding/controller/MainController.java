@@ -1,10 +1,8 @@
 package com.ding.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ding.DGlobal;
-import com.ding.data.DingDepartment;
-import com.ding.data.DingDepartmentList;
-import com.ding.data.DingDepartmentUsers;
-import com.ding.data.DingUser;
+import com.ding.data.*;
 import com.ding.main.InitToken;
 import com.ding.service.UserService;
 import org.apache.ibatis.annotations.Param;
@@ -105,8 +103,8 @@ public class MainController {
     @RequestMapping(value = "/getDingDepartmentUserDetail", method = {
             RequestMethod.GET,RequestMethod.POST},headers="Accept=application/json")
     @ResponseBody
-    public DingDepartmentUsers getDingDepartmentUserDetail(@RequestParam(value = "depId") Integer depId) throws Exception{
-        return userService.getDingDepartmentUser(depId);
+    public DingDepartmentUserDetail getDingDepartmentUserDetail(@RequestParam(value = "depId") Integer depId) throws Exception{
+        return userService.getDingDepartmentUserDetail(depId);
     }
 
     /**
@@ -124,7 +122,7 @@ public class MainController {
     }
 
     /**
-     *根据unionid得到用户id
+     *根据userid得到用户id
      *
      * @param userid
      * @return
@@ -135,6 +133,20 @@ public class MainController {
     @ResponseBody
     public DingUser getUserDetailByUserId(@RequestParam(value = "userid") String userid) throws Exception{
         return userService.getUserDetailByUserId(userid);
+    }
+
+    /**
+     *根据userid得到用户id
+     *
+     * @param url 当前页面url
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/getSignature", method = {
+            RequestMethod.GET,RequestMethod.POST},headers="Accept=application/json")
+    @ResponseBody
+    public JSONObject getSignature(@RequestParam(value = "url") String url) throws Exception{
+        return userService.getSignature(url);
     }
 
 }

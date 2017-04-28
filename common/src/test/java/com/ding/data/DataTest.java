@@ -2,7 +2,6 @@ package com.ding.data;
 
 import com.ding.CustomConfig;
 import com.ding.DGlobal;
-import com.ding.dao.UserDao;
 import com.ding.main.InitToken;
 import com.ding.mogondb.MongoDbService;
 import com.sweetw.idata.commons.annotations.AppUsingIdAndPwdAndIp;
@@ -19,8 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:*Context.xml")
 public class  DataTest {
 
-    @Autowired
-    UserDao userDao;
+   /* @Autowired
+    UserDao userDao;*/
 
     @Autowired
     MongoDbService mongoDbService;

@@ -58,6 +58,7 @@ public class DingUser extends DingResponseCode {
     private Boolean isHide;
     private String mobile;
     private String openId;
+    private String isLeader;
 
     public String getOrderInDepts() {
         return orderInDepts;
@@ -65,10 +66,6 @@ public class DingUser extends DingResponseCode {
 
     public void setOrderInDepts(String orderInDepts) {
         this.orderInDepts = orderInDepts;
-    }
-
-    public void setIsLeaderInDepts(String isLeaderInDepts) {
-        this.isLeaderInDepts = isLeaderInDepts;
     }
 
     public String getPosition() {
@@ -94,7 +91,6 @@ public class DingUser extends DingResponseCode {
     public void setDepartment(List<Integer> department) {
         this.department = department;
     }
-
 
     public String getTel() {
         return tel;
@@ -184,6 +180,14 @@ public class DingUser extends DingResponseCode {
         this.jobnumber = jobnumber;
     }
 
+    public String getIsLeaderInDepts() {
+        return isLeaderInDepts;
+    }
+
+    public void setIsLeaderInDepts(String isLeaderInDepts) {
+        this.isLeaderInDepts = isLeaderInDepts;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -230,5 +234,13 @@ public class DingUser extends DingResponseCode {
 
     public void setOpenId(String openId) {
         this.openId = openId;
+    }
+
+    public String getIsLeader() {
+        return isLeader;
+    }
+
+    public void setIsLeader(String isLeader) {
+        this.isLeader = isLeader;
     }
 }
