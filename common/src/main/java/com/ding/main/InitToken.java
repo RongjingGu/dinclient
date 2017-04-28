@@ -28,13 +28,19 @@ public class InitToken {
 
     private final static Logger _logger = Logger.getLogger(InitToken.class.getName());
 
+    @javax.annotation.PostConstruct
+    public void init()
+    {
+        initTokenTask();
+    }
+
     public  void initTokenTask() {
         //每隔7000秒，更新一次操作码
         TaskTimerUtil.schedule(new TimerTask() {
             public void run() {
                 getAccessToken();
             }
-        }, 5000, 900 * 1000);
+        }, 5000, 7100 * 1000);
     }
 
     public  void getAccessToken() {

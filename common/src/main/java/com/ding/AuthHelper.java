@@ -36,7 +36,12 @@ public class AuthHelper {
         return sb.toString();
     }
 
-    public static void main(String[] args){
-        System.out.println(getRandomString(12));
+    public static void main(String[] args) throws Exception{
+        String gu = "gu1505082";
+        MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
+        sha1.reset();
+        sha1.update(gu.getBytes("UTF-8"));
+        System.out.println(bytesToHex(sha1.digest()));
+
     }
 }

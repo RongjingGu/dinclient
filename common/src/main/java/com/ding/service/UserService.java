@@ -106,7 +106,7 @@ public class UserService {
      * @throws Exception
      */
     public JSONObject getSignature(String url) throws Exception{
-        String nonceStr = AuthHelper.getRandomString(12);
+        String nonceStr = AuthHelper.getRandomString(40);
         long timeStamp = System.currentTimeMillis();
         JSONObject map = new JSONObject();
         String signature = AuthHelper.sign(DGlobal.jsTicket, nonceStr, timeStamp, url);
