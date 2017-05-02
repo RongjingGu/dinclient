@@ -11,7 +11,9 @@ import com.sweetw.idata.commons.utils.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -110,11 +112,49 @@ public class UserService {
         long timeStamp = System.currentTimeMillis();
         JSONObject map = new JSONObject();
         String signature = AuthHelper.sign(DGlobal.jsTicket, nonceStr, timeStamp, url);
+        _logger.info("signature=" + signature);
         map.put("signature",signature);
         map.put("corpId",config.corpId);
         map.put("agentId",config.agentId);
         map.put("url",url);
+        map.put("timeStamp",timeStamp);
         map.put("nonceStr",nonceStr);
+        List<String> jsApiList = new ArrayList<String>();
+        jsApiList.add("runtime.info");
+        jsApiList.add("biz.contact.choose");
+        jsApiList.add("device.notification.confirm");
+        jsApiList.add("device.notification.alert");
+        jsApiList.add("device.notification.prompt");
+        jsApiList.add("biz.ding.post");
+        jsApiList.add("biz.util.openLink");
+        map.put("jsApiList",jsApiList);
         return map;
+    }
+
+    /**
+     * 根据免登code得到用户信息
+     * @param code
+     * @return
+     */
+    public JSONObject getUserInfoByCode(String code) throws Exception{
+        StringBuffer out = new StringBuffer();
+        String postString = "?" + "access_token=" + DGlobal.accessToken + "&code=" + code;
+        _logger.info("url:" + DGlobal.GET_USERINFO_BY_CODE + postString);
+        RemoteService.getResponse(DGlobal.GET_USERINFO_BY_CODE, "", postString, "GET", "application/X-WWW-form-urlencoded", out);
+        _logger.info("getResponse=" + out);
+        JSONObject myJsonObject = (JSONObject) JSONObject.parse(out.toString());
+        return myJsonObject;
+    }
+
+    public static void main(String[] args){
+        String text = "{\n" +
+                "    \"errcode\": 0,\n" +
+                "    \"errmsg\": \"ok\",\n" +
+                "    \"userid\": \"USERID\",\n" +
+                "    \"deviceId\":\"DEVICEID\",\n" +
+                "    \"is_sys\": true,\n" +
+                "}";
+        JSONObject myJsonObject = (JSONObject) JSONObject.parse(text);
+        System.out.println(myJsonObject.get("userid"));
     }
 }

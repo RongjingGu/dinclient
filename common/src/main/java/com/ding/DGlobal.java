@@ -34,4 +34,7 @@ public class DGlobal {
     /*https://oapi.dingtalk.com/user/list?access_token=ACCESS_TOKEN&department_id=1*/
     public static final String GET_DEPARTMENT_USERS_DETAIL = "https://oapi.dingtalk.com/user/list";
 
+    /*https://oapi.dingtalk.com/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE*/
+    public static final String GET_USERINFO_BY_CODE = "https://oapi.dingtalk.com/user/getuserinfo";
+
 }

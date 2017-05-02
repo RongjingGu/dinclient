@@ -149,4 +149,19 @@ public class MainController {
         return userService.getSignature(url);
     }
 
+
+    /**
+     *根据userid得到用户id
+     *
+     * @param code 免登用户code
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/getUserInfoByCode", method = {
+            RequestMethod.GET,RequestMethod.POST},headers="Accept=application/json")
+    @ResponseBody
+    public JSONObject getUserInfoByCode(@RequestParam(value = "code") String code) throws Exception{
+        return userService.getUserInfoByCode(code);
+    }
+
 }
