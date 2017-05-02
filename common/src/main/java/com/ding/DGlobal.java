@@ -37,4 +37,7 @@ public class DGlobal {
     /*https://oapi.dingtalk.com/user/getuserinfo?access_token=ACCESS_TOKEN&code=CODE*/
     public static final String GET_USERINFO_BY_CODE = "https://oapi.dingtalk.com/user/getuserinfo";
 
+    /*https://oapi.dingtalk.com/message/send?access_token=ACCESS_TOKEN*/
+    public static final String MSG_SEND = "https://oapi.dingtalk.com/message/send";
+
 }
