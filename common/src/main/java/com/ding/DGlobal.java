@@ -2,6 +2,7 @@ package com.ding;
 
 /**
  * Created by Gurongjing on 2017/4/27.
+ * Huifang Company
  */
 public class DGlobal {
 

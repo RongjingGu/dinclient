@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 /**
  * Created by Gurongjing on 2017/4/27.
+ * Huifang Company
  */
 
 @Component
