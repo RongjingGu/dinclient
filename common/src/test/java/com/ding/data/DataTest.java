@@ -67,4 +67,10 @@ public class  DataTest {
             System.out.println("=========="+"你好");
         }
     }
+
+    @Test
+    public void testMongo1(){
+        Timer timer = new Timer();
+        timer.schedule(new myTask(),1000,1*1000);
+    }
 }
